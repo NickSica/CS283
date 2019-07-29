@@ -1,0 +1,5 @@
+Use make q#.o while in the root to build a specific question then run it with ./q#.o. For example, "make q2" and "./q2.o" will run question 2.   
+Use make all to make all of the questions at once and run the normal way.   
+Use make clean to delete all executables.   
+   
+The sorting algorithm used is Selection Sort, learned in CS260. My ID is njs82.
