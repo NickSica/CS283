@@ -3,7 +3,15 @@
 
 #include <string.h>
 
-void parseSQL(char *input, char *cmd, char *fileName, char *vals);
+typedef struct
+{
+    char *operation;
+    char **fileNames;
+    char **fieldNames;
+    char **vals;
+} command;
+
+void parseSQL(char *input, command *cmd);
 
 
 #endif
