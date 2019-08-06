@@ -15,41 +15,49 @@ int main()
 	printf("%d %d %d %d", xLength, xSize, length, size);
 	*/
 
-	/*	
-	char *x = "This is a test";
-	char *y = "This is another test";
+	char x[] = "This is a test";
+	char y[] = "This is another test";
 	char *token = strtok(x, " "); // Expecting "This"
-	//char *token2 = strtok(y, " "); // Expecting "This"
-	//char *token3 = strtok(x, " "); // Expecting "is"
-	//printf(token);
-	printf("\n");
-	//printf(token2);
-	printf("\n");
-	//printf(token3);	
-	*/
+	printf("%s\n", x);
+	char *token3 = strtok(NULL, " "); // Expecting "is"
+	char *token2 = strtok(y, " "); // Expecting "This"
+	printf("%s\n", x);
+	printf("%s\n", token);
+	printf("%s\n", token2);
+	printf("%s\n", token3);
 	
 	printf("%d\n", sizeof(int));
-	int *x = (int *) malloc(4 * sizeof(int));
+	int *f = (int *) malloc(4 * sizeof(int));
 	int i;
 
 	for(i = 0; i < 4; i++)
 	{
-		x[i] = i;
+		f[i] = i;
 		printf("X[%d] = %d\n", i, x[i]);
 	}
-	
+
+	/* Questions 8 and 9
 	printf("%d\n", sizeof(x));
-	x = (int *) realloc(x, sizeof(int)*4);
+	f = (int *) realloc(x, sizeof(int)*8);
 	printf("%d\n", sizeof(x));
 
 	for(i = 0; i < 8; i++)
 	{
-		x[i] = i;
+		f[i] = i;
 		printf("X[%d] = %d\n", i, x[i]);
 	}
 
-	free(x);
-
+	free(f);
+	*/
 
 	return 0;
 }
+
+
+
+
+
+
+
+
+
