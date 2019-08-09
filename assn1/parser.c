@@ -60,24 +60,30 @@ void parseSQL(char *input, command *cmd)
 	    strtok(NULL, "(");
 	    char *fields = strtok(NULL, ")");
 	    char *field = strtok(fields, "=\"");
+	    int i = 0;
 	    while(field != NULL)
 	    {
-		fieldNames = strcat(strcat(fieldNames, field), "\n");
-		vals = strcat(strcat(vals, strtok(NULL, "\", ")), "\n");
+		cmd->fieldNames[i] = field;
+		cmd->vals[i] = strtok(NULL, "\", ");
+		i++;
 	    }
+	    cmd->lengths = i;
 	}
 	else if(strcmp(cmdPart, "CREATE") == 0)                                   // CREATE TABLE TableName FIELDS [Field1, Field2, ...]
 	{
 	    strtok(NULL, "[");
 	    char *fields = strtok(NULL, "]");
 	    char *field = strtok(fields, ", ");
+	    int i = 0;
 	    while(field != NULL)
 	    {
-		strcat(strcat(fieldNames, field), "\n");
+		cmd->fieldNames[i] = field;
 		field = strtok(NULL, ", ");
+		i++;
 	    }
+	    cmd->lengths = i;
 	}
-	
+
     }
 
 }

@@ -9,6 +9,7 @@ typedef struct
     char **fileNames;
     char **fieldNames;
     char **vals;
+    int lengths;
 } command;
 
 void parseSQL(char *input, command *cmd);
