@@ -1,130 +1,16 @@
-#include <stdio.h>
-#include <stdlib.h>
-
-#include "csapp.h"
 #include "parser.h"
-
-struct tableNode;
-typedef struct tableNode tableNode;
-
-struct tableNode {
-    char **vals;
-    char *fileName;
-    tableNode *next;
-    tableNode *prev;
-    int length;
-};
-
-tableNode *openTable(char *tableName, char *dbDir, int fd)
-{
-    char *path = strcat(dbDir, tableName);
-    fd = Open(path, O_CREAT | O_RDWR, 0);
-    int n;
-    rio_t rio;
-    char buf[MAXLINE];
-    
-    Rio_readinitb(&rio, fd);
-    if((n = Rio_readlineb(&rio, buf, MAXLINE)) != 0)
-    {
-	int length = 0;
-        char *tmpBuf = buf;
-	char *tmp = strtok(tmpBuf, ",");
-	char **fixedVals;
-	while(tmp != NULL)
-	{
-	    fixedVals[length] = tmp;
-	    length++;
-	    tmp = strtok(NULL, ",");
-	}
-	tableNode *head = {fixedVals, tableName, NULL, NULL, length};
-	tableNode *prev = head;
-	
-	while((n = Rio_readlineb(&rio, buf, MAXLINE)) != 0)
-	{
-	    fixedVals = NULL;
-	    tmpBuf = buf;
-	    tmp = strtok(tmpBuf, ",");
-	    length = 0;
-	    while(tmp != NULL)
-	    {
-		fixedVals[length] = tmp;
-		length++;
-		tmp = strtok(NULL, ",");
-	    }
-	    
-	    tableNode *tmpNode = {fixedVals, tableName, NULL, prev, length};
-	    prev->next = tmpNode;
-	    prev = tmpNode;
-	}
-    }	
-    else
-    {
-	tableNode *head = {NULL, tableName, NULL, NULL, 0};
-	return head;
-    }
-}
-
-tableNode *createTable(char *tableName, command *cmd, uint8_t tableNum)
-{
-    tableNode *headNode = {cmd->fieldNames, cmd->fileNames[tableNum-1], NULL, NULL, cmd->lengths};
-}
-
-int getFieldLoc(int length, char **vals, char *fieldName)
-{
-    int fieldLoc;
-    int i;
-    for(i = 0; i < length; i++)
-    {
-	if(strcmp(&vals[i], fieldName))
-	{
-	    fieldLoc = i;
-	    break;
-	}
-    } 
-}
-
-tableNode *findNode(tableNode *table, char *val, char *fieldName)
-{
-    tableNode *find = table->next;
-    int fieldLoc = getFieldLoc(table->length, table->vals, fieldName);
-
-    // Find where field="val" using the location from the head array
-    while(find != NULL)
-    {
-	if(strcmp(find->vals[fieldLoc], val))
-	    break;
-	find = find->next;
-    }
-    return find;
-}
-
-void printNode(tableNode *node)
-{
-    if(node == NULL)
-	printf("Value not found.\n");
-    else
-    {
-	int i;
-	for(i = 0; i < node->length-2; i++)
-	    printf("%s,", node->vals[i]);
-	printf("%s", node->vals[node->length-1]);
-    }	       
-}
+#include "table.h"
 
 int main(void)
 {
     command *cmd;
     tableNode *table1 = malloc(sizeof(tableNode));
     tableNode *table2 = malloc(sizeof(tableNode));
-    table1->next = NULL;
-    table1->prev = NULL;
-    table2->next = NULL;
-    table2->prev = NULL;
 
-    int file = -1;
-    char dbDir[100];
+    char input[100];
     printf("Input database directory path: ");
-    fgets(dbDir, 60, stdin);
+    fgets(input, 100, stdin);
+    char *dbDir = strcat(input, "/");
     
     struct stat stat;
     Stat(dbDir, &stat);
@@ -141,6 +27,7 @@ int main(void)
 
     while(1)
     {
+	uint8_t isChanged = 0;
 	char input[100];
 	cmd = malloc(sizeof(input));
 	printf("Enter a command:\n");
@@ -149,30 +36,58 @@ int main(void)
 	    break;
 	
 	parseSQL(input, cmd);
-	if(strcmp(cmd->operation, "SELECT WHERE") == 0)          // SELECT * FROM TableName WHERE Field1="value"
+	table1 = openTable(table1, cmd->fileNames[0], dbDir);
+	
+	
+	if(table1 == NULL)
+	    	printf("That table doesn't exist(Use a CREATE command first).");
+	else if(strcmp(cmd->operation, "SELECT WHERE") == 0)          // SELECT * FROM TableName WHERE Field1="value"
 	{
-	    if(strcmp(table1->fileName, cmd->fileNames[0]))
-	        table1 = openTable(cmd->fileNames[0], dbDir, file);
-	    tableNode *find = findNode(table1, cmd->vals[0], cmd->fieldNames[0]);
-	    printNode(find);
+	    tableNode **node = findNode(table1, cmd->vals[0], cmd->fieldNames[0]);
+	    int i;
+	    for(i = 0; i < (int)(sizeof(node)/sizeof(node[0])); i++)
+		if(node[0] != NULL)
+		    printNode(node[i]);
 	}
 	else if(strcmp(cmd->operation, "SELECT JOIN") == 0)     // SELECT * FROM TableName JOIN TableName2 ON TableName.Field1 = TableName2.Field2
 	{
 
+	    isChanged = 1;
 	}
 	else if(strcmp(cmd->operation, "DELETE") == 0)          // DELETE FROM TableName WHERE Field1="value"
 	{
-	    
+       	    tableNode **node = findNode(table1, cmd->vals[0], cmd->fieldNames[0]);
+	    int i;
+	    for(i = 0; i < (int)(sizeof(node)/sizeof(node[0])); i++)
+		if(node[0] != NULL)
+		{
+		    node[i]->prev->next = node[i]->next;
+		    node[i]->next->prev = node[i]->prev;
+		    isChanged = 1;
+		}
 	}
 	else if(strcmp(cmd->operation, "UPDATE") == 0)          // UPDATE TableName SET Field1="new value" WHERE Field2="value"
 	{
-
+	    tableNode **node = findNode(table1, cmd->vals[1], cmd->fieldNames[1]);
+	    if(node[0] != NULL)
+	    {
+		int i;
+		for(i = 0; i < (int)(sizeof(node)/sizeof(node[0])); i++)
+		{
+		    int fieldLoc = getFieldLoc(node[i]->length, table1->vals, cmd->fileNames[0]);
+		    if(fieldLoc != -1)
+		    {
+			node[i]->vals[fieldLoc] = cmd->vals[0];
+			isChanged = 1;
+		    }
+		}
+	    }
 	}
 	else if(strcmp(cmd->operation, "INSERT") == 0)          // INSERT INTO TableName (Field1="value", Field2="value", ...)
 	{
 	    if(cmd->lengths == table1->length)
 	    {
-		char **vals = malloc(sizeof(cmd->vals));
+		char *vals[cmd->lengths];
 		int i;
 		for(i = 0; i < cmd->lengths; i++)
 		{
@@ -197,6 +112,7 @@ int main(void)
 		    }
 		    node = node->next;
 		}
+		isChanged = 1;
 	    }
 	    else
 		printf("Inputted field amount doesn't match the table(Don't forget to put in the blank values).");
@@ -204,13 +120,28 @@ int main(void)
 	}
 	else if(strcmp(cmd->operation, "CREATE") == 0)          // CREATE TABLE TableName FIELDS [Field1, Field2, ...]
 	{
-	    int i = 0;
-	    for(i = 0; i < cmd->lengths; i++)
-		table1->vals[i] = cmd->fieldNames[i];
-	    table1->fileName = cmd->fileNames[0];
-	    table1->length = cmd->lengths;
-	    tableNode *newTable = malloc(sizeof(tableNode));
-	    table1->next = newTable;
+	    char confirm = 'n';
+	    struct stat stat;
+	    if(S_ISREG(stat.st_mode))
+	    {
+		while(confirm != 'y' || confirm != 'n')
+		{
+		    printf("\nThis file exists are you sure you want to overwrite it?[y/n] ");
+		    confirm = getchar();
+		}
+	    }
+
+	    if(confirm == 'y')
+	    {
+		int i = 0;
+		for(i = 0; i < cmd->lengths; i++)
+		    table1->vals[i] = cmd->fieldNames[i];
+		table1->fileName = cmd->fileNames[0];
+		table1->length = cmd->lengths;
+		tableNode *newTable = malloc(sizeof(tableNode));
+		table1->next = newTable;
+		isChanged = 1;
+	    }
 	}
 	else if(strcmp(cmd->operation, "DROP") == 0)             // DROP TABLE TableName
 	{
@@ -221,37 +152,24 @@ int main(void)
 		printf("Table deletion failed.");
 
 	    if(strcpy(table1->fileName, cmd->fieldNames[0]) == 0)
-		table1 = NULL;
-
+	    {
+		freeTable(table1);
+		table1 = malloc(sizeof(tableNode));   
+	    }
+	       
 	    if(strcpy(table2->fileName, cmd->fieldNames[0]) == 0)
-		table2 = NULL;
+	    {
+		freeTable(table2);
+		table2 = malloc(sizeof(tableNode));	
+	    }
 	}
+
+	if(isChanged == 1)
+	    writeTable(table1, dbDir);
     }
 
     free(cmd);
-
-    while(table1 != NULL)
-    {
-	tableNode *tempTable = table1->next;
-	free(table1);
-	table1 = tempTable;
-    }
-
-    while(table2 != NULL)
-    {
-	tableNode *tempTable = table2->next;
-	free(table2);
-	table1 = tempTable;
-    }
-    
+    freeTable(table1);
+    freeTable(table2);
     return 0;
 }
-
-
-
-
-
-
-
-
-
