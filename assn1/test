@@ -1,0 +1,13 @@
+CREATE TABLE grades FIELDS [name, grade, year]
+INSERT INTO grades (name="nick", grade="93", year="3rd")
+SELECT * FROM grades WHERE name="nick"
+SELECT * FROM grades WHERE name="neel"
+INSERT INTO grades (name="cameron", grade="100", year="15th")
+INSERT INTO grades (name="bob", grade="70", year="90")
+DELETE FROM grades WHERE name="cameron"
+INSERT INTO grades (name="cameron", grade="100", year="15th")
+UPDATE grades SET grade="70" WHERE name="cameron"
+UPDATE grades SET grade="90" WHERE year="3rd"
+CREATE TABLE animals FIELDS [type, coolness, toughness]
+INSERT INTO animals (type="chameleon", coolness="7000000", toughness="0")
+INSERT INTO grades (name="anthony", grade="3", year="700")

@@ -18,10 +18,11 @@ struct tableNode {
 };
 
 void writeTable(tableNode *table, char *dbDir);
-tableNode *openTable(tableNode *table, char *cmdTableName, char *dbDir);
+tableNode *openTable(tableNode *table, size_t valsSize, size_t oneValSize, char *cmdFileName, char *dbDir, char *op);
 int getFieldLoc(int length, char **tableFields, char *fieldName);
-tableNode **findNode(tableNode *table, char *val, char *fieldName);
+tableNode **findNode(tableNode *table, char *val, char *fieldName, int *numNodes);
 void printNode(tableNode *node);
+tableNode *allocTable(size_t valsSize, size_t oneValSize, size_t fileNameSize);
 void freeTable(tableNode *node);
 
 #endif
