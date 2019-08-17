@@ -1,0 +1,532 @@
+
+
+Sat Aug 17 15:59:58 2019
+Command line: TestDisk
+
+TestDisk 7.0, Data Recovery Utility, April 2015
+Christophe GRENIER <grenier@cgsecurity.org>
+http://www.cgsecurity.org
+OS: Linux, kernel 5.2.8-arch1-1-ARCH (#1 SMP PREEMPT Fri Aug 9 21:36:07 UTC 2019) x86_64
+Compiler: GCC 8.2
+Compilation date: 2018-10-03T23:07:17
+ext2fs lib: 1.45.3, ntfs lib: libntfs-3g, reiserfs lib: 0.3.0.5, ewf lib: none, curses lib: ncurses 6.1
+Hard disk list
+Disk /dev/sda - 500 GB / 465 GiB - CHS 60801 255 63, sector size=512 - Samsung Portable SSD T3
+
+Partition table type (auto): EFI GPT
+Disk /dev/sda - 500 GB / 465 GiB - Samsung Portable SSD T3
+Partition table type: EFI GPT
+
+Interface Advanced
+hdr_size=92
+hdr_lba_self=1
+hdr_lba_alt=976773167 (expected 976773167)
+hdr_lba_start=34
+hdr_lba_end=976773134
+hdr_lba_table=2
+hdr_entries=128
+hdr_entsz=128
+ 1 P EFI System                  4096    4100095    4096000
+ 2 P Linux Swap               4102144    8296447    4194304
+ 4 P Unknown                  8296448  677292031  668995584
+ 5 P Unknown                677294080  976766925  299472846
+gpt_change_part_type
+Change partition type:
+ 4 P EFI System               8296448  677292031  668995584
+Change partition type:
+ 4 P ext4                     8296448  677292031  668995584
+
+
+dir_partition inode=2
+ 4 P EFI System               8296448  677292031  668995584
+Directory /
+       2 drwxr-xr-x     0      0      4096 10-Jan-2019 16:50 .
+       2 drwxr-xr-x     0      0      4096 10-Jan-2019 16:50 ..
+  786433 drwx------  1001   1000      4096 11-Jan-2019 17:30 lfs
+ 4456449 drwx------  1000    998      4096 17-Aug-2019 15:59 nick
+   13643 drwx------     0      0      4096 29-Jul-2019 21:36 lost+found
+      11 -rw-r--r--  1000    998      1933 10-Jan-2019 16:48 config
+gpt_change_part_type
+Change partition type:
+ 5 P EFI System             677294080  976766925  299472846
+Change partition type:
+ 5 P ext4                   677294080  976766925  299472846
+
+
+dir_partition inode=2
+ 5 P EFI System             677294080  976766925  299472846
+Directory /
+       2 drwxr-xr-x     0      0      4096  9-Aug-2019 16:50 .
+       2 drwxr-xr-x     0      0      4096  9-Aug-2019 16:50 ..
+      11 drwx------     0      0     16384  4-Apr-2019 11:36 lost+found
+ 1703937 drwxr-xr-x     0      0      4096  4-Apr-2019 11:39 boot
+ 3014657 drwxr-xr-x     0      0      4096  4-Apr-2019 11:40 home
+      12 lrwxrwxrwx     0      0         7 23-May-2019 10:18 bin
+      13 lrwxrwxrwx     0      0         7 23-May-2019 10:18 lib
+      14 lrwxrwxrwx     0      0         7 23-May-2019 10:18 lib64
+      15 lrwxrwxrwx     0      0         7 23-May-2019 10:18 sbin
+  524289 drwxr-xr-x     0      0      4096  9-Aug-2019 16:50 tools
+ 3145729 drwxr-xr-x     0      0      4096  8-Jan-2019 16:31 boot.bak
+  655361 drwxr-xr-x     0      0      4096  4-Apr-2019 13:30 dev
+ 2228225 drwxr-xr-x     0      0      4096 17-Aug-2019 15:59 etc
+  131073 drwxr-xr-x     0      0      4096  5-Aug-2019 12:27 mnt
+ 3276801 drwxr-xr-x     0      0      4096  6-Aug-2019 13:40 opt
+ 3932161 dr-xr-xr-x     0      0      4096  4-Apr-2019 09:38 proc
+ 5373953 drwxr-xr-x     0      0      4096 12-Aug-2019 16:41 root
+ 4063233 drwxr-xr-x     0      0      4096  4-Apr-2019 09:46 run
+ 1835009 drwxr-xr-x     0      0      4096  8-Jan-2019 16:04 srv
+ 2359297 dr-xr-xr-x     0      0      4096  4-Apr-2019 11:45 sys
+ 1048577 drwxrwxrwt     0      0      4096  4-Apr-2019 12:42 tmp
+  786433 drwxr-xr-x     0      0      4096 17-Aug-2019 15:59 usr
+ 1572865 drwxr-xr-x     0      0      4096 14-Aug-2019 14:05 var
+X     17 -rw-------     0      0         0  9-Aug-2019 16:29 .ismount-test-file
+X     17 -rw-------     0      0         0  9-Aug-2019 16:29 cryptopkg
+X     18 -rw-r--r--     0      0         0  7-Aug-2019 19:55 packages
+X     19 -rw-r--r--     0      0         0  7-Aug-2019 19:55 packagesnew
+X     20 -rw-r--r--     0      0         0  7-Aug-2019 19:55 pkgcrypto
+X     21 -rw-r--r--     0      0         0  7-Aug-2019 19:55 pkgcryptonew
+X     23 -rw-r--r--     0      0         0  1-Jul-2019 15:45 backuphome.tar.gz
+
+
+dir_partition inode=2
+ 4 P EFI System               8296448  677292031  668995584
+Directory /
+       2 drwxr-xr-x     0      0      4096 10-Jan-2019 16:50 .
+       2 drwxr-xr-x     0      0      4096 10-Jan-2019 16:50 ..
+  786433 drwx------  1001   1000      4096 11-Jan-2019 17:30 lfs
+ 4456449 drwx------  1000    998      4096 17-Aug-2019 15:59 nick
+   13643 drwx------     0      0      4096 29-Jul-2019 21:36 lost+found
+      11 -rw-r--r--  1000    998      1933 10-Jan-2019 16:48 config
+
+dir_partition inode=4456449
+ 4 P EFI System               8296448  677292031  668995584
+Directory /nick
+ 4456449 drwx------  1000    998      4096 17-Aug-2019 15:59 .
+       2 drwxr-xr-x     0      0      4096 10-Jan-2019 16:50 ..
+ 4456450 drwxr-xr-x  1000    998      4096 11-Aug-2019 14:35 .cache
+ 4456451 drwxr-xr-x  1000    998      4096 14-Aug-2019 12:36 .config
+ 4456452 drwx------  1000    998      4096 17-Aug-2019 15:39 .emacs.d
+ 4456453 drwx------  1000    998      4096 15-Feb-2019 16:39 .gnupg
+ 4456454 drwxr-xr-x  1000    998      4096  6-Aug-2019 15:06 .local
+ 4456455 drwxr-xr-x  1000    998      4096 28-Jan-2019 11:34 .node-gyp
+ 4456456 drwxr-xr-x  1000    998      4096 29-Jul-2019 16:30 .npm
+ 4456457 drwx------  1000    998      4096 15-Jan-2019 13:18 .pki
+ 4456458 drwx------  1000    998      4096  3-Apr-2019 22:13 .ssh
+ 4456459 drwxr-xr-x  1000    998      4096 12-Aug-2019 01:07 .stack
+ 4456460 drwxr-xr-x  1000    998      4096 17-Jan-2019 15:14 .yadm
+ 6558638 drwxrwxrwx  1000    998      4096  9-Aug-2019 17:05 .Xilinx
+ 4458268 -rw-r--r--  1000    998      1373  9-Aug-2019 17:05 .zshrc
+ 4456462 drwxr-xr-x  1000    998      4096 11-Feb-2019 11:30 ChameleonWM
+ 4514193 drwxr-xr-x  1000    998      4096 29-Jul-2019 16:33 Iosevka
+ 4456464 drwxr-xr-x  1000    998      4096 15-Jan-2019 14:55 chromiumuserdata
+ 4456465 drwxr-xr-x  1000    998      4096 17-Jan-2019 15:00 emacs_config_copy
+ 4456466 drwxr-xr-x  1000    998      4096 30-Jan-2019 17:15 nerd-fonts
+ 4530194 drwxr-xr-x  1000    998      4096 10-Jul-2019 19:37 .var
+ 4456468 drwxr-xr-x  1000    998      4096 11-Feb-2019 10:44 windowsmanager
+ 4456469 drwxr-xr-x  1000    998      4096  6-Feb-2019 13:08 wlr-protocols
+ 11146064 drwxr-xr-x  1000    998      4096 12-Aug-2019 00:39 dist
+ 4456488 -rw-r--r--  1000    998        21  4-Jun-2018 04:54 .bash_logout
+ 11929689 drwxr-xr-x  1000    998      4096 14-Aug-2019 12:36 Downloads
+ 4456494 -rw-r--r--  1000    998       814 17-Jan-2019 16:07 .pacman_packages
+ 4456489 -rw-r--r--  1000    998        57  4-Jun-2018 04:54 .bash_profile
+ 4456490 -rw-r--r--  1000    998       616  6-Aug-2019 18:43 .bashrc
+ 4456491 -rw-r--r--  1000    998        51 17-Jan-2019 15:17 .gitconfig
+ 4456492 -rw-r--r--  1000    998       553 11-Jan-2019 10:56 .keybinds
+ 4466842 -rw-------  1000    998        58 14-Aug-2019 14:11 .lesshst
+ 4456509 -rw-r--r--  1000    998    108723  9-Jan-2019 18:17 Show-Off-Your-Config
+ 4456495 -rw-r--r--  1000    998       620 17-Jan-2019 16:07 .pip_packages
+X4482109 -rw-------  1000    998     18161 17-Aug-2019 15:20 .viminfo.tmp
+ 4456497 -rw-------  1000    998      1024  9-Jan-2019 19:13 .rnd
+ 4482109 -rw-------  1000    998     18161 17-Aug-2019 15:20 .viminfo
+ 4456499 -rw-r--r--  1000    998       865 31-Jul-2019 18:13 .wget-hsts
+ 4458970 -rw-r--r--  1000    998     45780 17-Aug-2019 15:00 .zcompdump
+ 4456501 -rw-r--r--  1000    998       547 17-Aug-2019 14:52 .zdirs
+ 4482107 -rw-------  1000    998     84758 17-Aug-2019 15:59 .zsh_history
+ 4459517 -rw-r--r--  1000    998       370 12-Aug-2019 01:18 .zshenv
+ 4514236 -rw-r--r--  1000    998       483 29-Jul-2019 19:40 y28lx6os
+ 4456505 -rw-r--r--  1000    998      1103  6-Aug-2019 17:19 .zshrc.bak
+ 4456506 -rw-r--r--  1000    998     10404 10-Jan-2019 15:09 .zshrcg
+ 10099859 drwxr-xr-x  1000    998      4096 14-Aug-2019 10:45 fpga_implementations
+ 4456511 -rw-r--r--  1000    998      1828  9-Jan-2019 18:28 betterconfig.txt
+ 4456510 -rw-r--r--  1000    998       313 10-Jan-2019 17:18 automount.sh
+ 4456513 -rw-r--r--  1000    998         0 30-Jan-2019 17:34 compile_commands.json
+ 4456512 -rw-r--r--  1000    998      2488  9-Jan-2019 18:26 betterconfig2.txt
+ 4456515 -rw-r--r--  1000    998       100 17-Jan-2019 16:06 pacman_packages.sh
+ 4456514 -rw-r--r--  1000    998      4400  9-Jan-2019 18:20 config.txt
+ 4456517 -rw-r--r--  1000    998        42 17-Jan-2019 16:05 pip_packages.sh
+ 4456516 -rw-r--r--  1000    998       620 17-Jan-2019 16:05 pip_packages
+ 4456519 -rw-r--r--  1000    998       173 31-Jan-2019 11:16 rsynccmds.txt
+ 4456518 -rw-r--r--  1000    998       438 15-Feb-2019 16:52 rsynccmds.sh
+ 4456525 -rw-r--r--  1000    998       141 10-Jan-2019 16:57 termitethemes.sh
+ 4456520 -rw-r--r--  1000    998         0 15-Feb-2019 11:21 scriptsMIPS
+ 4456521 -rw-r--r--  1000    998     50746 11-Jan-2019 14:16 server-0.xkb
+ 4456522 -rw-r--r--  1000    998       970 15-Feb-2019 14:01 sriptsMIPS
+ 4456523 -rw-r--r--  1000    998         0 10-Jan-2019 10:26 sudo
+ 4456524 -rw-r--r--  1000    998    201665 31-Jul-2019 14:52 sway.log
+ 4456528 -rw-r--r--  1000    998      5299  1-Sep-2018 19:26 wget-list
+ 4456526 -rw-r--r--  1000    998        52  4-Apr-2019 10:28 url
+ 11143104 drwxr-xr-x  1000    998      4096 11-Aug-2019 14:28 .theano
+ 4474813 -rw-r--r--  1000    998      3112  6-Apr-2019 14:33 output
+ 4456527 -rw-r--r--  1000    998   1869804 27-Dec-2016 01:22 wallhaven-469101.jpg
+ 4456529 -rw-r--r--  1000    998    143800  2-Apr-2019 08:39 ystemctl:q
+ 4725275 drwxr-xr-x  1000    998      4096  5-Apr-2019 14:23 arch-linux-surface
+ 4478508 drwxr-xr-x  1000    998      4096 14-Aug-2019 11:55 ECEC302
+ 4478565 drwxr-xr-x  1000    998      4096  7-Aug-2019 19:30 .oracle_jre_usage
+ 11142447 drwxr-xr-x  1000    998      4096 12-Aug-2019 00:39 .cabal
+ 4478569 drwxr-xr-x  1000    998      4096  8-Apr-2019 15:30 .java
+ 4591442 drwxr-xr-x     0      0      4096  8-Apr-2019 15:53 tools
+ 4478197 drwxr-xr-x  1000    998      4096  8-Apr-2019 17:12 ncurses5-compat-libs
+ 4481047 drwxrwxrwx  1000    998      4096 15-Apr-2019 13:18 Desktop
+ 4478724 -rw-r--r--  1000    998      1222  8-Apr-2019 21:08 ncurses5-compat-libs.tar.gz
+ 4522199 drwxr-xr-x  1000    998      4096 11-Aug-2019 22:39 ECEC355
+ 4493368 -rw-------  1000    998       309 10-May-2019 14:44 .bash_history
+ 4489351 drwxr-xr-x  1000    998      4096 18-Apr-2019 11:12 CS281
+ 4505982 drwxr-xr-x  1000    998      4096  3-Jun-2019 12:07 VIP
+ 4522171 drwxr-xr-x  1000    998      4096  1-Jul-2019 14:44 linux-vm-tools
+ 4522279 drwxr-xr-x  1000    998      4096 17-Jul-2019 14:31 l1-NickSica
+ 4505985 drwxr-xr-x  1000    998      4096 10-Jul-2019 11:31 .synergy
+ 11929675 drwxr-xr-x  1000    998      4096 12-Aug-2019 01:25 .clash
+ 10092857 drwxr-xr-x  1000    998      4096 12-Aug-2019 09:50 CS283
+ 4505988 drwxr-xr-x  1000    998      4096 17-Jul-2019 14:29 Bear
+ 4496900 -rw-r--r--  1000    998        54 21-May-2019 13:11 min_area_pfile.tmp
+ 4522392 drwx------  1000    998      4096 29-Jul-2019 20:45 .docker
+ 4499476 -rw-------  1000    998        55  1-Jul-2019 17:11 .Xauthority
+ 7344014 drwxr-xr-x  1000    998      4096 30-Jul-2019 01:44 .keras
+ 4514187 drwxr-xr-x  1000    998      4096 26-Jul-2019 17:37 CK
+ 10364458 drwxr-xr-x  1000    998      4096  6-Aug-2019 19:07 info
+ 4486022 -rw-r--r--  1000    998      5633 17-Apr-2019 13:26 .stalonetrayrc
+ 10092546 drwxr-xr-x  1000    998      4096 30-Jul-2019 14:17 perf-tools
+ 4456823 -rw-rw-rw-  1000    998         0  8-Apr-2019 19:38 .digilent_dvctbl.txt
+ 4513879 drwxr-xr-x  1000    998      4096  3-Jun-2019 12:02 CS265_tux
+ 4486469 -rw-r--r--  1000    998        21 19-Apr-2019 13:35 rando
+ 4472037 -rw-r--r--  1000    998       680 11-Apr-2019 13:14 packages
+ 4571387 drwxr-xr-x  1000    998      4096  7-Aug-2019 16:17 CK-TOOLS
+ 4514199 -rw-r--r--  1000    998         0 29-Jul-2019 18:55 output.html
+ 4620431 drwxr-xr-x  1000    998      4096 29-Jul-2019 20:39 tpu
+ 4510848 -rw-r--r--  1000    998        27 29-Jul-2019 15:24 package-lock.json
+ 4568481 -rw-r--r--  1000    998   1775087 30-Jul-2019 02:01 get-pip.py
+X4459480 -rw-r--r--  1000    998      1421 12-Aug-2019 10:39 .viminfo.tmp
+ 4571538 drwxr-xr-x  1000    998      4096 29-Jul-2019 19:50 iTerm2-Color-Schemes
+ 4522388 drwxr-xr-x  1000    998      4096 12-Aug-2019 14:58 neuromorphic_computing
+ 4456841 -rw-------  1000    998        40 31-Jul-2019 15:37 .gist
+ 10093040 drwxr-xr-x  1000    998      4096 31-Jul-2019 19:49 FPGA-Tcl-Scripts
+ 4466796 -rw-------  1000    998   2149992 31-Jul-2019 22:13 perf.data
+ 4465391 -rw-------  1000    998        16  1-Aug-2019 17:50 .esd_auth
+ 10093096 drwxr-xr-x  1000    998      4096 14-Aug-2019 14:17 cpu2017
+X4482080 lrwxrwxrwx  1000    998        23 17-Aug-2019 15:59 .zsh_history.LOCK
+ 10364468 drwxr-xr-x  1000    998      4096  6-Aug-2019 19:06 lib
+X4482107 -rw-------  1000    998     84758 17-Aug-2019 15:59 .zsh_history.new
+ 4458774 -rw-------  1000    998        41 11-Aug-2019 17:01 .python_history
+ 11152840 drwxr-xr-x  1000    998      4096  6-Aug-2019 19:25 temp-conda
+X4471065 -rw-r--r--  1000    998       349 12-Aug-2019 16:15 completed_run
+X4458461 -rw-r--r--  1000    998       204 12-Aug-2019 09:48 vivado.log
+ 6558903 drwxr-xr-x  1000    998      4096 11-Aug-2019 14:11 g1-NickSica
+ 4471072 -rw-r--r--  1000    998       437  7-Aug-2019 18:30 hs_err_pid11027.log
+X4470801 -rw-r--r--  1000    998       296 12-Aug-2019 14:19 vivado_11027.backup.jou
+X4471066 -rw-r--r--  1000    998      2014 12-Aug-2019 14:19 vivado_11027.backup.log
+X4458490 -rwxr-xr-x  1000    998       604 11-Aug-2019 14:19 .zsh_history.LOCK
+X4497934 -rwxr-xr-x  1000    998       368  3-Jun-2019 12:02 webtalk_2877.backup.log
+X4498033 -rw-r--r--  1000    998        28  3-Jun-2019 12:02 vivado_669.backup.log
+X4493443 -rw-r--r--  1000    998      2671 28-May-2019 13:49 .hdi.isWriteableTest.660.tmp
+
+dir_partition inode=10092857
+ 4 P EFI System               8296448  677292031  668995584
+Directory /nick/CS283
+ 10092857 drwxr-xr-x  1000    998      4096 12-Aug-2019 09:50 .
+ 4456449 drwx------  1000    998      4096 17-Aug-2019 15:59 ..
+ 10092858 drwxr-xr-x  1000    998      4096 17-Aug-2019 14:52 .git
+ 10092952 drwxr-xr-x  1000    998      4096 13-Aug-2019 17:36 assn1
+ 10092956 drwxr-xr-x  1000    998      4096 30-Jul-2019 16:32 lab1
+ 10099773 drwxr-xr-x  1000    998      4096  5-Aug-2019 21:23 midterm
+ 10099739 -rw-r--r--  1000    998     17712  9-Aug-2019 13:12 csapp.c
+ 10099832 -rw-r--r--  1000    998      5581  9-Aug-2019 13:13 csapp.h
+ 11929680 drwxr-xr-x  1000    998      4096 17-Aug-2019 15:59 lab2
+ 11929681 drwxr-xr-x  1000    998      4096 12-Aug-2019 09:50 lab3
+ 11929682 drwxr-xr-x  1000    998      4096 12-Aug-2019 09:50 assn2
+ 11929683 drwxr-xr-x  1000    998      4096 12-Aug-2019 09:50 assn3
+
+dir_partition inode=11929680
+ 4 P EFI System               8296448  677292031  668995584
+Directory /nick/CS283/lab2
+ 11929680 drwxr-xr-x  1000    998      4096 17-Aug-2019 15:59 .
+ 10092857 drwxr-xr-x  1000    998      4096 12-Aug-2019 09:50 ..
+ 11929685 -rw-r--r--  1000    998     17712 12-Aug-2019 09:50 csapp.c
+ 11929686 -rw-r--r--  1000    998      5581 12-Aug-2019 09:50 csapp.h
+ 11932640 -rw-r--r--  1000    998       385 17-Aug-2019 15:20 Makefile
+X11932640 -rw-r--r--  1000    998       385 17-Aug-2019 15:20 4913
+ 11929684 -rw-r--r--  1000    998       959 17-Aug-2019 15:56 client.c
+ 11932638 -rw-r--r--  1000    998      1371 17-Aug-2019 15:53 server.c
+ 11932641 -rwxr-xr-x  1000    998     54904 17-Aug-2019 15:50 server.out
+ 11932643 -rwxr-xr-x  1000    998     54176 17-Aug-2019 15:50 client.out
+ 11932644 lrwxrwxrwx  1000    998        30 17-Aug-2019 15:53 .#server.c
+ 11932645 -rw-r--r--  1000    998       418 17-Aug-2019 15:59 testdisk.log
+Directory /nick/CS283
+ 10092857 drwxr-xr-x  1000    998      4096 12-Aug-2019 09:50 .
+ 4456449 drwx------  1000    998      4096 17-Aug-2019 15:59 ..
+ 10092858 drwxr-xr-x  1000    998      4096 17-Aug-2019 14:52 .git
+ 10092952 drwxr-xr-x  1000    998      4096 13-Aug-2019 17:36 assn1
+ 10092956 drwxr-xr-x  1000    998      4096 30-Jul-2019 16:32 lab1
+ 10099773 drwxr-xr-x  1000    998      4096  5-Aug-2019 21:23 midterm
+ 10099739 -rw-r--r--  1000    998     17712  9-Aug-2019 13:12 csapp.c
+ 10099832 -rw-r--r--  1000    998      5581  9-Aug-2019 13:13 csapp.h
+ 11929680 drwxr-xr-x  1000    998      4096 17-Aug-2019 15:59 lab2
+ 11929681 drwxr-xr-x  1000    998      4096 12-Aug-2019 09:50 lab3
+ 11929682 drwxr-xr-x  1000    998      4096 12-Aug-2019 09:50 assn2
+ 11929683 drwxr-xr-x  1000    998      4096 12-Aug-2019 09:50 assn3
+
+dir_partition inode=11929681
+ 4 P EFI System               8296448  677292031  668995584
+Directory /nick/CS283/lab3
+ 11929681 drwxr-xr-x  1000    998      4096 12-Aug-2019 09:50 .
+ 10092857 drwxr-xr-x  1000    998      4096 12-Aug-2019 09:50 ..
+Directory /nick/CS283
+ 10092857 drwxr-xr-x  1000    998      4096 12-Aug-2019 09:50 .
+ 4456449 drwx------  1000    998      4096 17-Aug-2019 15:59 ..
+ 10092858 drwxr-xr-x  1000    998      4096 17-Aug-2019 14:52 .git
+ 10092952 drwxr-xr-x  1000    998      4096 13-Aug-2019 17:36 assn1
+ 10092956 drwxr-xr-x  1000    998      4096 30-Jul-2019 16:32 lab1
+ 10099773 drwxr-xr-x  1000    998      4096  5-Aug-2019 21:23 midterm
+ 10099739 -rw-r--r--  1000    998     17712  9-Aug-2019 13:12 csapp.c
+ 10099832 -rw-r--r--  1000    998      5581  9-Aug-2019 13:13 csapp.h
+ 11929680 drwxr-xr-x  1000    998      4096 17-Aug-2019 15:59 lab2
+ 11929681 drwxr-xr-x  1000    998      4096 12-Aug-2019 09:50 lab3
+ 11929682 drwxr-xr-x  1000    998      4096 12-Aug-2019 09:50 assn2
+ 11929683 drwxr-xr-x  1000    998      4096 12-Aug-2019 09:50 assn3
+
+dir_partition inode=11929680
+ 4 P EFI System               8296448  677292031  668995584
+Directory /nick/CS283/lab2
+ 11929680 drwxr-xr-x  1000    998      4096 17-Aug-2019 15:59 .
+ 10092857 drwxr-xr-x  1000    998      4096 12-Aug-2019 09:50 ..
+ 11929685 -rw-r--r--  1000    998     17712 12-Aug-2019 09:50 csapp.c
+ 11929686 -rw-r--r--  1000    998      5581 12-Aug-2019 09:50 csapp.h
+ 11932640 -rw-r--r--  1000    998       385 17-Aug-2019 15:20 Makefile
+X11932640 -rw-r--r--  1000    998       385 17-Aug-2019 15:20 4913
+ 11929684 -rw-r--r--  1000    998       959 17-Aug-2019 15:56 client.c
+ 11932638 -rw-r--r--  1000    998      1371 17-Aug-2019 15:53 server.c
+ 11932641 -rwxr-xr-x  1000    998     54904 17-Aug-2019 15:50 server.out
+ 11932643 -rwxr-xr-x  1000    998     54176 17-Aug-2019 15:50 client.out
+ 11932644 lrwxrwxrwx  1000    998        30 17-Aug-2019 15:53 .#server.c
+ 11932645 -rw-r--r--  1000    998       418 17-Aug-2019 15:59 testdisk.log
+Directory /nick/CS283
+ 10092857 drwxr-xr-x  1000    998      4096 12-Aug-2019 09:50 .
+ 4456449 drwx------  1000    998      4096 17-Aug-2019 15:59 ..
+ 10092858 drwxr-xr-x  1000    998      4096 17-Aug-2019 14:52 .git
+ 10092952 drwxr-xr-x  1000    998      4096 13-Aug-2019 17:36 assn1
+ 10092956 drwxr-xr-x  1000    998      4096 30-Jul-2019 16:32 lab1
+ 10099773 drwxr-xr-x  1000    998      4096  5-Aug-2019 21:23 midterm
+ 10099739 -rw-r--r--  1000    998     17712  9-Aug-2019 13:12 csapp.c
+ 10099832 -rw-r--r--  1000    998      5581  9-Aug-2019 13:13 csapp.h
+ 11929680 drwxr-xr-x  1000    998      4096 17-Aug-2019 15:59 lab2
+ 11929681 drwxr-xr-x  1000    998      4096 12-Aug-2019 09:50 lab3
+ 11929682 drwxr-xr-x  1000    998      4096 12-Aug-2019 09:50 assn2
+ 11929683 drwxr-xr-x  1000    998      4096 12-Aug-2019 09:50 assn3
+Directory /nick
+ 4456449 drwx------  1000    998      4096 17-Aug-2019 15:59 .
+       2 drwxr-xr-x     0      0      4096 10-Jan-2019 16:50 ..
+ 4456450 drwxr-xr-x  1000    998      4096 11-Aug-2019 14:35 .cache
+ 4456451 drwxr-xr-x  1000    998      4096 14-Aug-2019 12:36 .config
+ 4456452 drwx------  1000    998      4096 17-Aug-2019 15:39 .emacs.d
+ 4456453 drwx------  1000    998      4096 15-Feb-2019 16:39 .gnupg
+ 4456454 drwxr-xr-x  1000    998      4096  6-Aug-2019 15:06 .local
+ 4456455 drwxr-xr-x  1000    998      4096 28-Jan-2019 11:34 .node-gyp
+ 4456456 drwxr-xr-x  1000    998      4096 29-Jul-2019 16:30 .npm
+ 4456457 drwx------  1000    998      4096 15-Jan-2019 13:18 .pki
+ 4456458 drwx------  1000    998      4096  3-Apr-2019 22:13 .ssh
+ 4456459 drwxr-xr-x  1000    998      4096 12-Aug-2019 01:07 .stack
+ 4456460 drwxr-xr-x  1000    998      4096 17-Jan-2019 15:14 .yadm
+ 6558638 drwxrwxrwx  1000    998      4096  9-Aug-2019 17:05 .Xilinx
+ 4458268 -rw-r--r--  1000    998      1373  9-Aug-2019 17:05 .zshrc
+ 4456462 drwxr-xr-x  1000    998      4096 11-Feb-2019 11:30 ChameleonWM
+ 4514193 drwxr-xr-x  1000    998      4096 29-Jul-2019 16:33 Iosevka
+ 4456464 drwxr-xr-x  1000    998      4096 15-Jan-2019 14:55 chromiumuserdata
+ 4456465 drwxr-xr-x  1000    998      4096 17-Jan-2019 15:00 emacs_config_copy
+ 4456466 drwxr-xr-x  1000    998      4096 30-Jan-2019 17:15 nerd-fonts
+ 4530194 drwxr-xr-x  1000    998      4096 10-Jul-2019 19:37 .var
+ 4456468 drwxr-xr-x  1000    998      4096 11-Feb-2019 10:44 windowsmanager
+ 4456469 drwxr-xr-x  1000    998      4096  6-Feb-2019 13:08 wlr-protocols
+ 11146064 drwxr-xr-x  1000    998      4096 12-Aug-2019 00:39 dist
+ 4456488 -rw-r--r--  1000    998        21  4-Jun-2018 04:54 .bash_logout
+ 11929689 drwxr-xr-x  1000    998      4096 14-Aug-2019 12:36 Downloads
+ 4456494 -rw-r--r--  1000    998       814 17-Jan-2019 16:07 .pacman_packages
+ 4456489 -rw-r--r--  1000    998        57  4-Jun-2018 04:54 .bash_profile
+ 4456490 -rw-r--r--  1000    998       616  6-Aug-2019 18:43 .bashrc
+ 4456491 -rw-r--r--  1000    998        51 17-Jan-2019 15:17 .gitconfig
+ 4456492 -rw-r--r--  1000    998       553 11-Jan-2019 10:56 .keybinds
+ 4466842 -rw-------  1000    998        58 14-Aug-2019 14:11 .lesshst
+ 4456509 -rw-r--r--  1000    998    108723  9-Jan-2019 18:17 Show-Off-Your-Config
+ 4456495 -rw-r--r--  1000    998       620 17-Jan-2019 16:07 .pip_packages
+X4482109 -rw-------  1000    998     18161 17-Aug-2019 15:20 .viminfo.tmp
+ 4456497 -rw-------  1000    998      1024  9-Jan-2019 19:13 .rnd
+ 4482109 -rw-------  1000    998     18161 17-Aug-2019 15:20 .viminfo
+ 4456499 -rw-r--r--  1000    998       865 31-Jul-2019 18:13 .wget-hsts
+ 4458970 -rw-r--r--  1000    998     45780 17-Aug-2019 15:00 .zcompdump
+ 4456501 -rw-r--r--  1000    998       547 17-Aug-2019 14:52 .zdirs
+ 4482107 -rw-------  1000    998     84758 17-Aug-2019 15:59 .zsh_history
+ 4459517 -rw-r--r--  1000    998       370 12-Aug-2019 01:18 .zshenv
+ 4514236 -rw-r--r--  1000    998       483 29-Jul-2019 19:40 y28lx6os
+ 4456505 -rw-r--r--  1000    998      1103  6-Aug-2019 17:19 .zshrc.bak
+ 4456506 -rw-r--r--  1000    998     10404 10-Jan-2019 15:09 .zshrcg
+ 10099859 drwxr-xr-x  1000    998      4096 14-Aug-2019 10:45 fpga_implementations
+ 4456511 -rw-r--r--  1000    998      1828  9-Jan-2019 18:28 betterconfig.txt
+ 4456510 -rw-r--r--  1000    998       313 10-Jan-2019 17:18 automount.sh
+ 4456513 -rw-r--r--  1000    998         0 30-Jan-2019 17:34 compile_commands.json
+ 4456512 -rw-r--r--  1000    998      2488  9-Jan-2019 18:26 betterconfig2.txt
+ 4456515 -rw-r--r--  1000    998       100 17-Jan-2019 16:06 pacman_packages.sh
+ 4456514 -rw-r--r--  1000    998      4400  9-Jan-2019 18:20 config.txt
+ 4456517 -rw-r--r--  1000    998        42 17-Jan-2019 16:05 pip_packages.sh
+ 4456516 -rw-r--r--  1000    998       620 17-Jan-2019 16:05 pip_packages
+ 4456519 -rw-r--r--  1000    998       173 31-Jan-2019 11:16 rsynccmds.txt
+ 4456518 -rw-r--r--  1000    998       438 15-Feb-2019 16:52 rsynccmds.sh
+ 4456525 -rw-r--r--  1000    998       141 10-Jan-2019 16:57 termitethemes.sh
+ 4456520 -rw-r--r--  1000    998         0 15-Feb-2019 11:21 scriptsMIPS
+ 4456521 -rw-r--r--  1000    998     50746 11-Jan-2019 14:16 server-0.xkb
+ 4456522 -rw-r--r--  1000    998       970 15-Feb-2019 14:01 sriptsMIPS
+ 4456523 -rw-r--r--  1000    998         0 10-Jan-2019 10:26 sudo
+ 4456524 -rw-r--r--  1000    998    201665 31-Jul-2019 14:52 sway.log
+ 4456528 -rw-r--r--  1000    998      5299  1-Sep-2018 19:26 wget-list
+ 4456526 -rw-r--r--  1000    998        52  4-Apr-2019 10:28 url
+ 11143104 drwxr-xr-x  1000    998      4096 11-Aug-2019 14:28 .theano
+ 4474813 -rw-r--r--  1000    998      3112  6-Apr-2019 14:33 output
+ 4456527 -rw-r--r--  1000    998   1869804 27-Dec-2016 01:22 wallhaven-469101.jpg
+ 4456529 -rw-r--r--  1000    998    143800  2-Apr-2019 08:39 ystemctl:q
+ 4725275 drwxr-xr-x  1000    998      4096  5-Apr-2019 14:23 arch-linux-surface
+ 4478508 drwxr-xr-x  1000    998      4096 14-Aug-2019 11:55 ECEC302
+ 4478565 drwxr-xr-x  1000    998      4096  7-Aug-2019 19:30 .oracle_jre_usage
+ 11142447 drwxr-xr-x  1000    998      4096 12-Aug-2019 00:39 .cabal
+ 4478569 drwxr-xr-x  1000    998      4096  8-Apr-2019 15:30 .java
+ 4591442 drwxr-xr-x     0      0      4096  8-Apr-2019 15:53 tools
+ 4478197 drwxr-xr-x  1000    998      4096  8-Apr-2019 17:12 ncurses5-compat-libs
+ 4481047 drwxrwxrwx  1000    998      4096 15-Apr-2019 13:18 Desktop
+ 4478724 -rw-r--r--  1000    998      1222  8-Apr-2019 21:08 ncurses5-compat-libs.tar.gz
+ 4522199 drwxr-xr-x  1000    998      4096 11-Aug-2019 22:39 ECEC355
+ 4493368 -rw-------  1000    998       309 10-May-2019 14:44 .bash_history
+ 4489351 drwxr-xr-x  1000    998      4096 18-Apr-2019 11:12 CS281
+ 4505982 drwxr-xr-x  1000    998      4096  3-Jun-2019 12:07 VIP
+ 4522171 drwxr-xr-x  1000    998      4096  1-Jul-2019 14:44 linux-vm-tools
+ 4522279 drwxr-xr-x  1000    998      4096 17-Jul-2019 14:31 l1-NickSica
+ 4505985 drwxr-xr-x  1000    998      4096 10-Jul-2019 11:31 .synergy
+ 11929675 drwxr-xr-x  1000    998      4096 12-Aug-2019 01:25 .clash
+ 10092857 drwxr-xr-x  1000    998      4096 12-Aug-2019 09:50 CS283
+ 4505988 drwxr-xr-x  1000    998      4096 17-Jul-2019 14:29 Bear
+ 4496900 -rw-r--r--  1000    998        54 21-May-2019 13:11 min_area_pfile.tmp
+ 4522392 drwx------  1000    998      4096 29-Jul-2019 20:45 .docker
+ 4499476 -rw-------  1000    998        55  1-Jul-2019 17:11 .Xauthority
+ 7344014 drwxr-xr-x  1000    998      4096 30-Jul-2019 01:44 .keras
+ 4514187 drwxr-xr-x  1000    998      4096 26-Jul-2019 17:37 CK
+ 10364458 drwxr-xr-x  1000    998      4096  6-Aug-2019 19:07 info
+ 4486022 -rw-r--r--  1000    998      5633 17-Apr-2019 13:26 .stalonetrayrc
+ 10092546 drwxr-xr-x  1000    998      4096 30-Jul-2019 14:17 perf-tools
+ 4456823 -rw-rw-rw-  1000    998         0  8-Apr-2019 19:38 .digilent_dvctbl.txt
+ 4513879 drwxr-xr-x  1000    998      4096  3-Jun-2019 12:02 CS265_tux
+ 4486469 -rw-r--r--  1000    998        21 19-Apr-2019 13:35 rando
+ 4472037 -rw-r--r--  1000    998       680 11-Apr-2019 13:14 packages
+ 4571387 drwxr-xr-x  1000    998      4096  7-Aug-2019 16:17 CK-TOOLS
+ 4514199 -rw-r--r--  1000    998         0 29-Jul-2019 18:55 output.html
+ 4620431 drwxr-xr-x  1000    998      4096 29-Jul-2019 20:39 tpu
+ 4510848 -rw-r--r--  1000    998        27 29-Jul-2019 15:24 package-lock.json
+ 4568481 -rw-r--r--  1000    998   1775087 30-Jul-2019 02:01 get-pip.py
+X4459480 -rw-r--r--  1000    998      1421 12-Aug-2019 10:39 .viminfo.tmp
+ 4571538 drwxr-xr-x  1000    998      4096 29-Jul-2019 19:50 iTerm2-Color-Schemes
+ 4522388 drwxr-xr-x  1000    998      4096 12-Aug-2019 14:58 neuromorphic_computing
+ 4456841 -rw-------  1000    998        40 31-Jul-2019 15:37 .gist
+ 10093040 drwxr-xr-x  1000    998      4096 31-Jul-2019 19:49 FPGA-Tcl-Scripts
+ 4466796 -rw-------  1000    998   2149992 31-Jul-2019 22:13 perf.data
+ 4465391 -rw-------  1000    998        16  1-Aug-2019 17:50 .esd_auth
+ 10093096 drwxr-xr-x  1000    998      4096 14-Aug-2019 14:17 cpu2017
+X4482080 lrwxrwxrwx  1000    998        23 17-Aug-2019 15:59 .zsh_history.LOCK
+ 10364468 drwxr-xr-x  1000    998      4096  6-Aug-2019 19:06 lib
+X4482107 -rw-------  1000    998     84758 17-Aug-2019 15:59 .zsh_history.new
+ 4458774 -rw-------  1000    998        41 11-Aug-2019 17:01 .python_history
+ 11152840 drwxr-xr-x  1000    998      4096  6-Aug-2019 19:25 temp-conda
+X4471065 -rw-r--r--  1000    998       349 12-Aug-2019 16:15 completed_run
+X4458461 -rw-r--r--  1000    998       204 12-Aug-2019 09:48 vivado.log
+ 6558903 drwxr-xr-x  1000    998      4096 11-Aug-2019 14:11 g1-NickSica
+ 4471072 -rw-r--r--  1000    998       437  7-Aug-2019 18:30 hs_err_pid11027.log
+X4470801 -rw-r--r--  1000    998       296 12-Aug-2019 14:19 vivado_11027.backup.jou
+X4471066 -rw-r--r--  1000    998      2014 12-Aug-2019 14:19 vivado_11027.backup.log
+X4458490 -rwxr-xr-x  1000    998       604 11-Aug-2019 14:19 .zsh_history.LOCK
+X4497934 -rwxr-xr-x  1000    998       368  3-Jun-2019 12:02 webtalk_2877.backup.log
+X4498033 -rw-r--r--  1000    998        28  3-Jun-2019 12:02 vivado_669.backup.log
+X4493443 -rw-r--r--  1000    998      2671 28-May-2019 13:49 .hdi.isWriteableTest.660.tmp
+Directory /
+       2 drwxr-xr-x     0      0      4096 10-Jan-2019 16:50 .
+       2 drwxr-xr-x     0      0      4096 10-Jan-2019 16:50 ..
+  786433 drwx------  1001   1000      4096 11-Jan-2019 17:30 lfs
+ 4456449 drwx------  1000    998      4096 17-Aug-2019 15:59 nick
+   13643 drwx------     0      0      4096 29-Jul-2019 21:36 lost+found
+      11 -rw-r--r--  1000    998      1933 10-Jan-2019 16:48 config
+
+
+dir_partition inode=2
+ 5 P EFI System             677294080  976766925  299472846
+Directory /
+       2 drwxr-xr-x     0      0      4096  9-Aug-2019 16:50 .
+       2 drwxr-xr-x     0      0      4096  9-Aug-2019 16:50 ..
+      11 drwx------     0      0     16384  4-Apr-2019 11:36 lost+found
+ 1703937 drwxr-xr-x     0      0      4096  4-Apr-2019 11:39 boot
+ 3014657 drwxr-xr-x     0      0      4096  4-Apr-2019 11:40 home
+      12 lrwxrwxrwx     0      0         7 23-May-2019 10:18 bin
+      13 lrwxrwxrwx     0      0         7 23-May-2019 10:18 lib
+      14 lrwxrwxrwx     0      0         7 23-May-2019 10:18 lib64
+      15 lrwxrwxrwx     0      0         7 23-May-2019 10:18 sbin
+  524289 drwxr-xr-x     0      0      4096  9-Aug-2019 16:50 tools
+ 3145729 drwxr-xr-x     0      0      4096  8-Jan-2019 16:31 boot.bak
+  655361 drwxr-xr-x     0      0      4096  4-Apr-2019 13:30 dev
+ 2228225 drwxr-xr-x     0      0      4096 17-Aug-2019 15:59 etc
+  131073 drwxr-xr-x     0      0      4096  5-Aug-2019 12:27 mnt
+ 3276801 drwxr-xr-x     0      0      4096  6-Aug-2019 13:40 opt
+ 3932161 dr-xr-xr-x     0      0      4096  4-Apr-2019 09:38 proc
+ 5373953 drwxr-xr-x     0      0      4096 12-Aug-2019 16:41 root
+ 4063233 drwxr-xr-x     0      0      4096  4-Apr-2019 09:46 run
+ 1835009 drwxr-xr-x     0      0      4096  8-Jan-2019 16:04 srv
+ 2359297 dr-xr-xr-x     0      0      4096  4-Apr-2019 11:45 sys
+ 1048577 drwxrwxrwt     0      0      4096  4-Apr-2019 12:42 tmp
+  786433 drwxr-xr-x     0      0      4096 17-Aug-2019 15:59 usr
+ 1572865 drwxr-xr-x     0      0      4096 14-Aug-2019 14:05 var
+X     17 -rw-------     0      0         0  9-Aug-2019 16:29 .ismount-test-file
+X     17 -rw-------     0      0         0  9-Aug-2019 16:29 cryptopkg
+X     18 -rw-r--r--     0      0         0  7-Aug-2019 19:55 packages
+X     19 -rw-r--r--     0      0         0  7-Aug-2019 19:55 packagesnew
+X     20 -rw-r--r--     0      0         0  7-Aug-2019 19:55 pkgcrypto
+X     21 -rw-r--r--     0      0         0  7-Aug-2019 19:55 pkgcryptonew
+X     23 -rw-r--r--     0      0         0  1-Jul-2019 15:45 backuphome.tar.gz
+
+dir_partition inode=3014657
+ 5 P EFI System             677294080  976766925  299472846
+Directory /home
+ 3014657 drwxr-xr-x     0      0      4096  4-Apr-2019 11:40 .
+       2 drwxr-xr-x     0      0      4096  9-Aug-2019 16:50 ..
+Directory /
+       2 drwxr-xr-x     0      0      4096  9-Aug-2019 16:50 .
+       2 drwxr-xr-x     0      0      4096  9-Aug-2019 16:50 ..
+      11 drwx------     0      0     16384  4-Apr-2019 11:36 lost+found
+ 1703937 drwxr-xr-x     0      0      4096  4-Apr-2019 11:39 boot
+ 3014657 drwxr-xr-x     0      0      4096  4-Apr-2019 11:40 home
+      12 lrwxrwxrwx     0      0         7 23-May-2019 10:18 bin
+      13 lrwxrwxrwx     0      0         7 23-May-2019 10:18 lib
+      14 lrwxrwxrwx     0      0         7 23-May-2019 10:18 lib64
+      15 lrwxrwxrwx     0      0         7 23-May-2019 10:18 sbin
+  524289 drwxr-xr-x     0      0      4096  9-Aug-2019 16:50 tools
+ 3145729 drwxr-xr-x     0      0      4096  8-Jan-2019 16:31 boot.bak
+  655361 drwxr-xr-x     0      0      4096  4-Apr-2019 13:30 dev
+ 2228225 drwxr-xr-x     0      0      4096 17-Aug-2019 15:59 etc
+  131073 drwxr-xr-x     0      0      4096  5-Aug-2019 12:27 mnt
+ 3276801 drwxr-xr-x     0      0      4096  6-Aug-2019 13:40 opt
+ 3932161 dr-xr-xr-x     0      0      4096  4-Apr-2019 09:38 proc
+ 5373953 drwxr-xr-x     0      0      4096 12-Aug-2019 16:41 root
+ 4063233 drwxr-xr-x     0      0      4096  4-Apr-2019 09:46 run
+ 1835009 drwxr-xr-x     0      0      4096  8-Jan-2019 16:04 srv
+ 2359297 dr-xr-xr-x     0      0      4096  4-Apr-2019 11:45 sys
+ 1048577 drwxrwxrwt     0      0      4096  4-Apr-2019 12:42 tmp
+  786433 drwxr-xr-x     0      0      4096 17-Aug-2019 15:59 usr
+ 1572865 drwxr-xr-x     0      0      4096 14-Aug-2019 14:05 var
+X     17 -rw-------     0      0         0  9-Aug-2019 16:29 .ismount-test-file
+X     17 -rw-------     0      0         0  9-Aug-2019 16:29 cryptopkg
+X     18 -rw-r--r--     0      0         0  7-Aug-2019 19:55 packages
+X     19 -rw-r--r--     0      0         0  7-Aug-2019 19:55 packagesnew
+X     20 -rw-r--r--     0      0         0  7-Aug-2019 19:55 pkgcrypto
+X     21 -rw-r--r--     0      0         0  7-Aug-2019 19:55 pkgcryptonew
+X     23 -rw-r--r--     0      0         0  1-Jul-2019 15:45 backuphome.tar.gz
+
+TestDisk exited normally.
