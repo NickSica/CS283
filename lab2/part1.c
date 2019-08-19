@@ -31,14 +31,17 @@ void read_response(int clientfd)
 	{
 	    char *key = strtok(line, ":");
 	    char *val = strtok(NULL, "\r\n");
+	    if(*val == ' ')
+		val += 1;
+
 	    if(strcmp(key, "Content-Length") == 0)
 		bytes_to_read = atoi(val);
-	    else if(strcmp(key, "Transfer-Enconding"))
-		if(strcmp(val, " chunked"))
+	    else if(strcmp(key, "Transfer-Encoding") == 0)
+		if(strcmp(val, "chunked") == 0)
 		    isChunked = 1;
 	    Rio_readlineb(&rio, line, sizeof(line));
 	}
-	
+
 	Rio_readlineb(&rio, line, sizeof(line));
 	bytes_to_read = strtol(line, 0, 16);
 	if(isChunked == 1)

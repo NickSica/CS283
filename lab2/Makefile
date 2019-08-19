@@ -14,6 +14,12 @@ client: client.c csapp.c
 server: server.c csapp.c
 	$(cc) $^ -pthread -g -o server.out
 
+tserver: server
+	./server.out 13000
+
+tclient: client
+	./client.out localhost 13000
+
 tpart2: server client
 	./server.out 13000 &
 	./client.out localhost 13000
