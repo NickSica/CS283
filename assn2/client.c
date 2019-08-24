@@ -49,7 +49,7 @@ int main(int argc, char **argv)
     read_args->key = d;
     read_args->c = dc;
     pthread_create(&tid2, NULL, read_message, (void *)read_args);
-    pthread_join(tid1, NULL);
+    pthread_join(tid2, NULL);
     
     Close(clientfd);
     free(send_args);

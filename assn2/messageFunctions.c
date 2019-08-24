@@ -14,18 +14,17 @@ void *send_message(void *arg)
 	    exit(0);
 	
 	printf("ENCRYPTED %s to ", buf);
-	for(int i = 0; i < (int)strlen(buf) - 1; i++)
+	for(int i = 0; i < (int)strlen(buf); i++)
 	{
 	    long encrypted = encrypt(buf[i], args->key, args->c);
 	    char encrypted_char[256];
-	    if(i == (int)strlen(buf) - 2)
+	    if(i == (int)strlen(buf) - 1)
 		sprintf(encrypted_char, "%ld\n", encrypted);
 	    else
 		sprintf(encrypted_char, "%ld ", encrypted);
 	    printf("%s", encrypted_char);
 	    Rio_writen(args->connfd, encrypted_char, strlen(encrypted_char));
 	}
-	Rio_writen(args->connfd, buf, strlen(buf));
     }
     return NULL;
 }
@@ -39,24 +38,32 @@ void *read_message(void *arg)
     while(1)
     {
 	int status = Rio_readlineb(&rio, line, sizeof(line));
+	size_t line_len = strlen(line) - 1;
+	if(line[line_len] == '\r' || line[line_len] == '\n')
+	    line[line_len] = '\0';
+	    
 	if(status == -1 || status == 0)
 	{
 	    printf("Connection Error.\n");
-	    free(args);
-	    exit(1);
+	    return NULL;
 	}
 	else
 	{
 	    printf("DECRYPTED %s to ", line);
-	    char *encrypted_char = malloc(strlen(line)+1);
-	    encrypted_char = strtok(line, " \n");	    
+	    char *message = malloc(strlen(line));
+	    strcpy(message, "");
+	    char *encrypted_char = strtok(line, " \n");	    
 	    while(encrypted_char != NULL)
 	    {
-		uint8_t decrypted_char = decrypt(atol(encrypted_char), args->key, args->c);
-		printf("%c", decrypted_char);
+		char decrypted_char[2];
+		decrypted_char[0] = decrypt(atol(encrypted_char), args->key, args->c);
+		decrypted_char[1] = '\0';
+		strcat(message, decrypted_char);
+// 		printf("DECRYPTED %s to %c\n", encrypted_char, decrypted_char);
 		encrypted_char = strtok(NULL, " \n");
 	    }
-	    printf("\n");
+	    printf("%s\n", message);
+	    free(message);
 	}
     }
     return NULL;

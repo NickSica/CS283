@@ -24,11 +24,11 @@ int main(int argc, char **argv)
 
     printf("Waiting for a client...\n");
     struct sockaddr_in client_addr;
-    unsigned int client_len;
-    int connfd = accept(listenfd, (struct sockaddr *)&client_addr, &client_len);
-    struct hostent *hp = Gethostbyaddr((const char *)&client_addr, sizeof(client_addr.sin_addr.s_addr), AF_INET);
-    char *haddrp = inet_ntoa(client_addr.sin_addr);
-    printf("Server connected to %s (%s)\n", hp->h_name, haddrp);
+    unsigned int client_len = sizeof(client_addr);
+    int connfd = Accept(listenfd, (struct sockaddr *)&client_addr, &client_len);
+//    struct hostent *hp = Gethostbyaddr((const char *)&client_addr.sin_addr.s_addr, sizeof(client_addr.sin_addr.s_addr), AF_INET);
+//    char *haddrp = inet_ntoa(client_addr.sin_addr);
+//    printf("Server connected to %s (%s)\n", hp->h_name, haddrp);
 
     arguments *send_args = malloc(sizeof(arguments));
     pthread_t tid1, tid2;
@@ -42,7 +42,7 @@ int main(int argc, char **argv)
     read_args->key = d;
     read_args->c = dc;
     pthread_create(&tid2, NULL, read_message, (void *)read_args);
-    pthread_join(tid1, NULL);
+    pthread_join(tid2, NULL);
 
     Close(connfd);
     Close(listenfd);
@@ -50,6 +50,7 @@ int main(int argc, char **argv)
     free(read_args);
     exit(0);
 }
+
 
 
 
