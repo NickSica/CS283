@@ -8,8 +8,8 @@ int main(int argc, char **argv)
 	dimensions = 8;
     }
 
-    num_games = (int)argv[1];
-    dimensions = (int)argv[2];
+    num_games = atoi(argv[1]);
+    dimensions = atoi(argv[2]);
 
     if(dimensions == 0 || num_games == 0)
     {
@@ -55,6 +55,9 @@ int main(int argc, char **argv)
     
     return 0;
 }
+
+
+
 
 
 
