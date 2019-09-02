@@ -1,0 +1,6 @@
+njs82
+Build the program using make build.
+Run the program with n games and m grid size using the command GAMES=n DIMENSION=m make run.
+Run the test cases using make test.
+
+I spent a lot of time on an AI we didn't need. The AI is in the old file if you wanna look, it sucks.
